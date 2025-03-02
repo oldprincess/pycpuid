@@ -480,3 +480,11 @@ class InstructionSet(object):
 
     def _3DNOW(self):
         return _bit_test(self._CPU_Rep.f_81_EDX, 31) and self._CPU_Rep.isAMD
+
+    def AVX512VL(self):
+        # https://en.wikichip.org/wiki/x86/gfni
+        return _bit_test(self._CPU_Rep.f_7_EBX, 31)
+
+    def GFNI(self):
+        # https://en.wikichip.org/wiki/x86/gfni
+        return _bit_test(self._CPU_Rep.f_7_ECX, 8)
