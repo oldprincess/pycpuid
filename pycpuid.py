@@ -488,3 +488,11 @@ class InstructionSet(object):
     def GFNI(self):
         # https://en.wikichip.org/wiki/x86/gfni
         return _bit_test(self._CPU_Rep.f_7_ECX, 8)
+
+    def VAES(self):
+        # https://en.wikipedia.org/wiki/CPUID
+        return _bit_test(self._CPU_Rep.f_7_ECX, 9)
+
+    def VPCLMULQDQ(self):
+        # https://en.wikipedia.org/wiki/CPUID
+        return _bit_test(self._CPU_Rep.f_1_ECX, 10)
